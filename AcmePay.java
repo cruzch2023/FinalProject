@@ -19,7 +19,7 @@ public class AcmePay {
             double gross = grossPay(rate, hours);
             
             System.out.println("Hours worked is " + hours);
-            System.out.println("Hourly pay rate is " + rate);
+            System.out.println("Hourly pay rate is $" + rate);
             hoursBreakdown(rate, hours);
             retirementPay(shift, retire, gross);
         }
@@ -52,8 +52,8 @@ public class AcmePay {
             regularp = 40 * rate;
             overtimep = (hours - 40) * 1.5 * rate;
         }
-        System.out.println("Your Regular Pay is: " + regularp);
-        System.out.println("OverTime Pay is: " + overtimep);
+        System.out.println("Your Regular Pay is: $" + regularp);
+        System.out.println("OverTime Pay is: $" + overtimep);
     }
 
     public static double grossPay(double rate, double hours)
@@ -85,7 +85,7 @@ public class AcmePay {
             net = gross;
          }
 
-        System.out.println("Retirment Deduction is " + retirementd);
-        System.out.println("Net Pay is " + net);
+        System.out.println("Retirment Deduction is $" + retirementd);
+        System.out.println("Net Pay is $" + net);
     }
 }
