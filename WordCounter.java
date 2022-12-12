@@ -30,7 +30,7 @@ public class WordCounter {
             boolean isAlphabetic = false;
 
             // Check each letter in a word for at least one alphabetic character.
-            for (int j = 0; i < word.length(); j++) {
+            for (int j = 0; j < word.length(); j++) {
                 if (Character.isAlphabetic(word.charAt(j))) {
                     isAlphabetic = true;
 
