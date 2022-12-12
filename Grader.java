@@ -1,71 +1,32 @@
-@@ -0,0 +1,70 @@
-/* This class accepts a letter grade A-F
-   and a numeric grade 0 - 4 and converts
-   the letter grade to a numeric grade and
-   the numeric grade to a letter grade.
+package fixed;
+
+/* The driver class below uses
+   the Grade class to convert
+   grades entered by the user
+   into other forms of the same
+   grade. The results are shown
+   in a GUI, as is the input.
 */
 
-public class Grade
+import javax.swing.JOptionPane;
+
+public class Grader extends Grade
 {
-	// Instance fields
-	private String origLetter;
-	private double newNumeric;
-
-	private double origNumeric;
-	private String newLetter;
-
-	// Default constructor
-	public Grade()
+	public static void main(String[] args)
 	{
-		origLetter = "";
-		origNumeric = 0;
-		newLetter = "";
-		newNumeric = 0;
-	}
-
-	// Parametric constructor
-	public Grade(String oldLetter, double oldNumeric)
-	{
-		origLetter = oldLetter;
-		origNumeric = oldNumeric;
-
-		setNewNumeric();
-		setNewLetter();
-	}
-
-	// Mutator method for new numeric grade
-	private void setNewNumeric()
-	{
-		if (origLetter.substring(0, 1).equals("A"))
-		{
-			newNumeric = 4;
-		}
-		else if (origLetter.substring(0, 1).equals("B"))
-
-      //Complete the other cases
-
-	// Mutator method for new letter grade
-	private void setNewLetter()
-	{
-		if (origNumeric == 4)
-		{
-			newLetter = "A+";
-		}
-		else if (origNumeric <= 3.99 && origNumeric >= 3.85)
-		{
-			newLetter = "A";
-		}
-		  //Complete the other cases
-
-	// Accessor method for new numeric grade
-	public double getNewNumeric()
-	{
-		//complete this method
-	}
-
-	// Accessor method for new letter grade
-	public String getNewLetter()
-	{
-		//complete this method
+		String origLetter = JOptionPane.showInputDialog("Please enter Letter Grade:");
+		String origNumeric = JOptionPane.showInputDialog("Please enter Numeric Grade:");
+    
+		//include string for origNumeric
+		
+		Grade userGrades = new Grade(origLetter, Double.parseDouble(origNumeric));
+    
+    //displays the final result
+		
+		JOptionPane.showMessageDialog(null,
+				"Numeric Grade Equivalent = " + userGrades.getNewNumeric() +
+						"\n\nLetter Grade Equivalent = " + userGrades.getNewLetter(),
+				"Grades",
+				JOptionPane.INFORMATION_MESSAGE);
 	}
 }
